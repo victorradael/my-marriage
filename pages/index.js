@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { MdScreenRotation } from "react-icons/md";
 
 export default function Home() {
   const date = new Date();
@@ -26,9 +27,12 @@ export default function Home() {
         <iframe
           src={`https://player.twitch.tv/?channel=astronautvr&parent=${urlParent}&output=embed`}
           scrolling="no"
-          height="414"
-          width="896"
         ></iframe>
+
+        <div className="icon">
+          <MdScreenRotation size="8rem" />
+          <p>Gire o aparelho</p>
+        </div>
 
         {count == 0 ? (
           <>
@@ -48,8 +52,14 @@ export default function Home() {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          background: #015abe;
+          box-sizing: border-box;
+          overflow: hidden;
           background: url("https://www.teahub.io/photos/full/247-2474382_abstract-nature-wallpaper-imagem-de-fazenda-papel-de.jpg") -20rem;
+        }
+
+        iframe {
+          height: 414px;
+          width: 896px;
         }
 
         main {
@@ -80,12 +90,67 @@ export default function Home() {
 
         .space {
           padding: 1rem 0 0 0;
+          box-sizing: border-box;
         }
 
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
+        .icon {
+          color: #fff;
+          display: none;
+          flex: 1;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+        }
+
+        @media (max-width: 375px) {
+          .title {
+            font-size: 2rem;
+          }
+
+          iframe {
+            display: none;
+          }
+
+          .icon {
+            display: flex;
+          }
+        }
+
+        @media (max-width: 414px) {
+          .title {
+            font-size: 2.3rem;
+          }
+
+          iframe {
+            display: none;
+          }
+
+          .icon {
+            display: flex;
+          }
+        }
+
+        @media (max-width: 684px) {
+          .title {
+            font-size: 2.6rem;
+            padding-top: 1rem;
+          }
+
+          iframe {
+            height: 128px;
+            width: 200px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .title {
+            font-size: 2.9rem;
+            padding-top: 1rem;
+          }
+
+          iframe {
+            height: 324px;
+            width: 554px;
           }
         }
       `}</style>
