@@ -5,6 +5,9 @@ export default function Home() {
   const marryDate = new Date("September 10, 2021 00:00:00");
   var count = ((marryDate - date) / 1000 / 60 / 60 / 24).toFixed(0);
 
+  const urlParent = "carolevictor.vercel.app";
+  const urlLocal = "localhost";
+
   return (
     <div className="container">
       <Head>
@@ -21,7 +24,7 @@ export default function Home() {
         <h1 className="title">Carol & Victor </h1>
 
         <iframe
-          src="https://player.twitch.tv/?channel=astronautvr&parent=localhost&output=embed"
+          src={`https://player.twitch.tv/?channel=astronautvr&parent=${urlParent}&output=embed`}
           scrolling="no"
           height="414"
           width="896"
