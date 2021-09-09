@@ -78,7 +78,7 @@ export default function Home() {
           {count == 0 ? (
             <>
               <h1 className="footer space">Chegou o Dia!</h1>
-              <p>às 16:30 h</p>
+              <p>às 18:00 h</p>
             </>
           ) : (
             <h1 className="footer space">Faltam {count} Dias</h1>
